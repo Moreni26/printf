@@ -1,0 +1,114 @@
+.\" Manpage for _printf function.
+.\"
+.TH _PRINTF "SUN, 22 JULY 2023" "0x11.C-printf" "Library functionsmanual"
+
+.SH NAME
+SH ""
+
+.B _printf - prints inputted data according to a format.
+
+.SH SYNOPSIS
+.SH ""
+
+#include "main.h"
+int _printf(const char *[FORMAT], ...);
+
+.SH DESCRIPTION
+.SH ""
+
+Prints ARGUMENT(s) based on FORMAT
+_printf function sends formatted output to standard output
+_printf also takes an indefinite amount of arguments.
+
+.SS Compilation
+.P
+.RS
+
+#include "main.h"
+
+$ gcc -Wall -Werror -Wextra -pedantic -Wno-format *.c
+$ gcc -Wall -Werror -Wextra -pedantic -g -Wno-format *.c (for gdb debugging)
+
+.RE
+
+.SS Printing
+.RS
+
+int _printf(const char *[FORMAT], ...);
+
+FORMAT is the string that takes n specifier followed by a '%' symbol.
+
+.SS Example
+.RS
+
+.B Input
+.PP
+_printf("Hi this is %s from %d ALX Cohort\\n\\", 33);
+.PP
+.B Output
+.PP
+Hi this is %s from ALX Cohort
+.RE
+
+.SS Return Value
+Return value is an n number of characters except NULL.
+
+.SH FLAG SPECIFIERS
+.SH ""
+custom and nom-custom specifier modifiers.
+
+.SH THE LENGTH MODIFIERS
+.SH ""
+Length modifiers
+
+.SH THE CONVERSION SPECIFIERS
+.SH "'
+.RS
+Current arguments handled by conversion specifiers:
+
+.IT
+.B %
+- % symbol is set without argument and conversion specification
+has to be '%%'.
+
+.IT
+.B c
+- int or char argument converted to unsigned char.
+
+.IT
+.B d, i
+- int argument converted to signed decimal int.
+
+.IT
+.B s
+- string argument. _printf handles conversion specifier if the
+value of argument is not a pointer to a literal string. \
+
+.IT
+.B o, u, x, X
+- unsigned int argument convertef to unsigned octal (o), unsigned decimal (u),
+unsigned hexidecimal notation, (x) for lower case and (X) for upper case.
+
+.IT
+.B b
+- unsigned int argument is converted to binary
+
+.IT
+.B p
+- The pointer is printef in hexidecimal format preceded by '0x'.
+
+.IT
+.B r, R
+- 'r' prints string in reverse order. 'R' prints encryptef rot13.
+
+.IT
+.B S
+- ascii <32 & >127 has to appear in the argument string
+convertef to hexidecimal preceded by \x.
+
+.RE
+.P
+
+.SH AUTHORS
+Usman Opeyemi (Moreni26)
+Izuchukwu Abonyi (Drpmartins)
