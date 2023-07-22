@@ -1,7 +1,4 @@
 #include "main.h"
-
-/************************* PRINT CHAR *************************/
-
 /**
  * print_char - function to Print a char
  * @types: List a type of arguments
@@ -21,7 +18,6 @@ int print_char(va_list types, char buffer[],
 	return (handle_write_char(c, buffer, flags, width, precision, size));
 }
 
-/************************* PRINT A STRING *************************/
 /**
  * print_string - function that Prints a string
  * @types: List  of argument types
@@ -78,7 +74,6 @@ int print_string(va_list types, char buffer[],
 	return (write(1, str, length));
 }
 
-/************************* PRINT PERCENT SIGN *************************/
 /**
  * print_percent - function that Prints a percent sign
  * @types: List a of arguments
@@ -102,7 +97,6 @@ int print_percent(va_list types, char buffer[],
 	return (write(1, "%%", 1));
 }
 
-/************************* PRINT INT *************************/
 /**
  * print_int - function that Prints int
  * @types: List a of arguments
@@ -147,7 +141,6 @@ int print_int(va_list types, char buffer[],
 	return (write_number(is_negative, i, buffer, flags, width, precision, size));
 }
 
-/************************* PRINT BINARY *************************/
 /**
  * print_binary - Prints an unsigned number
  * @types: Lista of arguments
