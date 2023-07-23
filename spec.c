@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * get_specifier - A function that finds the format function
- * @s: paramater for string of the format
+ * get_specifier - A function that identifies the format function
+ * @s: Paramater for string of the format
  * Return: the number of bytes printed
  */
 
@@ -41,7 +41,7 @@ int (*get_specifier(char *s))(va_list ap, params_t *params)
 }
 
 /**
- * get_print_func - A function that finds the format function
+ * get_print_func - A function that discovers the format function
  * @s: parameter for string of the format
  * @ap: parameter for argument pointer
  * @params: the parameters struct
