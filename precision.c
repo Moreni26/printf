@@ -6,26 +6,35 @@
  * @ap: paramater for the argument pointer
  * Return: new pointer
 */
+
 char *get_precision(char *s, params_t *params, va_list ap)
 {
-	int d = 0;
+	int curr_i = *i + 1;
+	int precision = -1;
 
-	if (*s != '.')
-		return (s);
+	if (format[curr_i] != '.')
+		return (precision);
 
-	s++; /* Move past the period '.' */
+	precision = 0;
 
-	if (*s == '*')
+	for (curr_i += 1; format[curr_i] != '\0'; curr_i++)
 	{
-		d = va_arg(ap, int);
-		s++; /* Move past the asterisk '*' */
-	}
-	else
-	{
-		while (_isdigit(*s))
-			d = d * 10 + (*s++ - '0');
+		if (is_digit(format[curr_i]))
+		{
+			precision *= 10;
+			precision += format[curr_i] - '0';
+		}
+		else if (format[curr_i] == '*')
+		{
+			curr_i++;
+			precision = va_arg(list, int);
+			break;
+		}
+		else
+			break;
 	}
 
-	params->precision = d;
-	return (s);
+	*i = curr_i - 1;
+
+	return (precision);
 }
