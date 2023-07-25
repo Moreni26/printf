@@ -1,5 +1,6 @@
-#include "main.h"
+#includ#include "main.h"
 #include <ctype.h>
+
 /**
  * get_precision -  function that gets the precision from the format string
  * @format:  the format string parameter
@@ -7,9 +8,10 @@
  * @ap: parameter for the argument pointer
  * Return: new pointer
  */
+
 char *get_precision(char *format, params_t *params, va_list ap)
 {
-    int curr_i = 0; /* Initialize the variable `i` */
+    int curr_i = 0; /* Initialize the variable `i`*/
     int precision = -1;
 
     if (format[curr_i] != '.')
@@ -19,7 +21,7 @@ char *get_precision(char *format, params_t *params, va_list ap)
 
     for (curr_i += 1; format[curr_i] != '\0'; curr_i++)
     {
-        if (isdigit(format[curr_i])) /* Use isdigit from ctype.h */
+        if (isdigit(format[curr_i]))/*Use isdigit from ctype.h*/
         {
             precision *= 10;
             precision += format[curr_i] - '0';
